@@ -3,7 +3,7 @@
 **Disciplina**: Sistema de Banco de Dados 1<br>
 **Código da Disciplina**: FGA0137<br>
 **Professor**: Maurício Serrano<br>
-**Número do Grupo**: 02<br>
+**Número do Grupo**: 07<br>
 
 ![Alt Text](https://c.tenor.com/fSDhYCDcVTIAAAAd/fallout.gif)
 
