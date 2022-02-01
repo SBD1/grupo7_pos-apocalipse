@@ -1,6 +1,4 @@
-# grupo7_pos-apocalipse
-
-# Pós-Apocalipse (Fallout)
+# Pós-Apocalipse (Fallout) - GRUPO 07
 
 **Disciplina**: Sistema de Banco de Dados 1<br>
 **Código da Disciplina**: FGA0137<br>
