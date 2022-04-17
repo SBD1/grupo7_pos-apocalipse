@@ -60,9 +60,9 @@ class CircleButton(Button):
         mouse_pos = [pyxel.mouse_x, pyxel.mouse_y]
         bpos = [self.posx, self.posy]
 
-        if pyxel.btn(pyxel.MOUSE_LEFT_BUTTON) and  (dist(mouse_pos, bpos) < self.radius):
+        if pyxel.btn(pyxel.MOUSE_BUTTON_LEFT) and  (dist(mouse_pos, bpos) < self.radius):
             self.offset = 0
-        elif pyxel.btnr(pyxel.MOUSE_LEFT_BUTTON) and  (dist(mouse_pos, bpos) < self.radius):
+        elif pyxel.btnr(pyxel.MOUSE_BUTTON_LEFT) and  (dist(mouse_pos, bpos) < self.radius):
             if self.is_on:
                 self.is_on = False
                 self.offset = 4
@@ -99,9 +99,9 @@ class RectButton(Button):
         
     def update(self):
 
-        if pyxel.btn(pyxel.MOUSE_LEFT_BUTTON) and  col_mouse_bt(pyxel.mouse_x, pyxel.mouse_y, self.posx, self.posy, self.width, self.height):
+        if pyxel.btn(pyxel.MOUSE_BUTTON_LEFT) and  col_mouse_bt(pyxel.mouse_x, pyxel.mouse_y, self.posx, self.posy, self.width, self.height):
             self.offset = 0
-        elif pyxel.btnr(pyxel.MOUSE_LEFT_BUTTON) and  col_mouse_bt(pyxel.mouse_x, pyxel.mouse_y, self.posx, self.posy, self.width, self.height):
+        elif pyxel.btnr(pyxel.MOUSE_BUTTON_LEFT) and  col_mouse_bt(pyxel.mouse_x, pyxel.mouse_y, self.posx, self.posy, self.width, self.height):
             if self.is_on:
                 self.is_on = False
                 self.offset = 4
@@ -138,9 +138,9 @@ class PushButton(Button):
         mouse_pos = [pyxel.mouse_x, pyxel.mouse_y]
         bpos = [self.posx, self.posy]
 
-        if pyxel.btn(pyxel.MOUSE_LEFT_BUTTON) and  (dist(mouse_pos, bpos) < self.radius):
+        if pyxel.btn(pyxel.MOUSE_BUTTON_LEFT) and  (dist(mouse_pos, bpos) < self.radius):
             self.offset = 0
-        elif pyxel.btnr(pyxel.MOUSE_LEFT_BUTTON) and  (dist(mouse_pos, bpos) < self.radius):
+        elif pyxel.btnr(pyxel.MOUSE_BUTTON_LEFT) and  (dist(mouse_pos, bpos) < self.radius):
             self.offset = 2
             pyxel.playm(3, loop=False)
             return True

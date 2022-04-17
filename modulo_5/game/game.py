@@ -5,7 +5,7 @@ import pyxel
 
 class Game:
     def __init__(self):
-        pyxel.init(globals.WIDTH, globals.HEIGHT, caption="Project Nuclear", fps=30)
+        pyxel.init(globals.WIDTH, globals.HEIGHT, title="Project Nuclear", fps=30)
         pyxel.mouse(True)
         pyxel.load("assets/assets.pyxres")
         
