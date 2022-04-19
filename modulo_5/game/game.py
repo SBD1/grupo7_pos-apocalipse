@@ -14,7 +14,7 @@ class Game:
         # print(consulta)
         pyxel.init(globals.WIDTH, globals.HEIGHT, title="Project Nuclear", fps=30)
         pyxel.mouse(True)
-        pyxel.load("assets/assets.pyxres")
+        pyxel.load("assets.pyxres")
         
         pyxel.run(self.update, self.draw)
 

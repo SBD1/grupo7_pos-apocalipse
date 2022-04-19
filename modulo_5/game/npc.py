@@ -4,14 +4,15 @@ import pyxel
 
 
 class Npc(Entity):
-    def __init__(self):
-        super().__init__()
+    # def __init__(self, x, y):
+    #     super().__init__()
 
-        self.x = 20
-        self.y = 50
+    #     self.x = 20
+    #     self.y = 50
 
     def update(self):
-        self.move()
+        super().update()
 
     def draw(self):
-        pyxel.circ(self.x, self.y, 10, pyxel.COLOR_YELLOW)
+        pyxel.blt(self.x, self.y, 0, 32, 0, 8, 8, pyxel.COLOR_BLACK)
+

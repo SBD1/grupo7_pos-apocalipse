@@ -11,14 +11,15 @@ from states.gamestate import GameState
 class RunState(GameState):
     def __init__(self) -> None:
         super().__init__()
-        self.x = 40
-        self.y = 40
 
         self.btBack = buttons.PushButton(15, 15, "<", 5, textCenter=True)
 
     def update(self):
         super().update()
         player1.update()
+        npc1.update()
+        inimigo1.update()
+
 
         if self.btBack.update():
             globals.next_state = "menu"
@@ -26,8 +27,10 @@ class RunState(GameState):
     def draw(self):
         super().draw()
 
-        self.btBack.draw()
+        pyxel.bltm(0, 0, 0, 0, 0, globals.WIDTH, globals.HEIGHT)
 
         player1.draw()
         npc1.draw()
         inimigo1.draw()
+
+        self.btBack.draw()

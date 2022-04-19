@@ -4,14 +4,15 @@ import pyxel
 
 
 class Inimigo(Entity):
-    def __init__(self):
-        super().__init__()
+    # def __init__(self):
+    #     super().__init__()
 
-        self.x = 200
-        self.y = 175
+    #     self.x = 200
+    #     self.y = 175
 
     def update(self):
-        self.move()
+        super().update()
 
     def draw(self):
-        pyxel.circ(self.x, self.y, 10, pyxel.COLOR_RED)
+        pyxel.blt(self.x, self.y, 0, 48, 0, 8, 8, pyxel.COLOR_BLACK)
+

@@ -9,7 +9,7 @@ import pyxel
 class MenuState(GameState):
     def __init__(self) -> None:
         super().__init__()
-        self.btStart = buttons.PushButton(128, 98, "INICIAR", 25, textCenter=True)
+        self.btStart = buttons.PushButton(globals.WIDTH/2, globals.HEIGHT/2, "INICIAR", 15, textCenter=True)
 
     def update(self):
         super().update()
