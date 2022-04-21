@@ -14,5 +14,5 @@ class Npc(Entity):
         super().update()
 
     def draw(self):
-        pyxel.blt(self.x, self.y, 0, 32, 0, 8, 8, pyxel.COLOR_BLACK)
+        pyxel.blt(self.x-4, self.y-4, 0, 32, 0, 8, 8, pyxel.COLOR_BLACK)
 

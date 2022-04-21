@@ -7,7 +7,7 @@ import pyxel
 class Game:
     def __init__(self):
         # testeCon = 
-        database.conecta_db()
+        # database.conecta_db()
         # print(testeCon)
         # sql = 'select * from arma'
         # consulta = database.consultar_db(sql)

@@ -1,10 +1,30 @@
 import pyxel
 
-delay = 220
+def draw_ui():
+    ...
 
 def align_text(x, str):
     n = len(str)
     return (x - (n * pyxel.FONT_WIDTH) / 2)
+
+def get_player_tile(x, y):
+    return [int(x/8), int(y/8)]
+
+def col_player_map(px, py, room_col):
+    # print("x = " + str(x))
+    # print("y = " + str(y))
+    # print("\npx = " + str(px))
+    # print("py = " + str(py))
+    
+    x, y = get_player_tile(px-1, py-1)
+    if(room_col[y][x] == 1):
+        return True
+
+    x, y = get_player_tile(px+1, py+1)
+    if(room_col[y][x] == 1):
+        return True
+
+    return False
 
 def col_mouse_bt(mx, my, btx, bty, btw, bth):
     """
