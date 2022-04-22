@@ -26,6 +26,11 @@ class RunState(GameState):
             player1.x = old_pos[0]
             player1.y = old_pos[1]
 
+        if utils.col_player_map_door(player1.x, player1.y, self.room.room_col):
+            player1.x = 7*8+4
+            player1.y = 1*8+4
+            self.room.change_room(2)
+
         if pyxel.btnp(pyxel.KEY_B):
             globals.next_state = "menu"
 

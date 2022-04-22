@@ -26,6 +26,17 @@ def col_player_map(px, py, room_col):
 
     return False
 
+def col_player_map_door(px, py, room_col):
+    x, y = get_player_tile(px-1, py-1)
+    if(room_col[y][x] == 2):
+        return True
+
+    x, y = get_player_tile(px+1, py+1)
+    if(room_col[y][x] == 2):
+        return True
+
+    return False
+
 def col_mouse_bt(mx, my, btx, bty, btw, bth):
     """
         Verifica o clique no botão
