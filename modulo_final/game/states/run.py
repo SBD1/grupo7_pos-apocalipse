@@ -27,12 +27,19 @@ class RunState(GameState):
             player1.y = old_pos[1]
 
         if utils.col_player_map_door(player1.x, player1.y, self.room.room_col):
-            player1.x = 7*8+4
-            player1.y = 1*8+4
-            self.room.change_room(2)
+            
+            player1.x, player1.y = utils.get_pos_after_room_change()
+
+            if self.room.id == 1:
+                self.room.change_room(2)
+            elif self.room.id == 2:
+                self.room.change_room(1)
 
         if pyxel.btnp(pyxel.KEY_B):
             globals.next_state = "menu"
+
+        if pyxel.btnp(pyxel.KEY_I):
+            globals.next_state = "inventory"
 
     def draw(self):
         super().draw()

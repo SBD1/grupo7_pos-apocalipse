@@ -6,6 +6,7 @@ import pyxel
 
 class Room:
     def __init__(self) -> None:
+        self.id = 1
         self.room_tm = []
         self.room_col = []
         self.npcs = []
@@ -42,6 +43,7 @@ class Room:
             }
         }
 
+        self.id = room_id
         self.room_tm = rooms[room_id]['tm']
         self.room_col = rooms[room_id]['col']
 

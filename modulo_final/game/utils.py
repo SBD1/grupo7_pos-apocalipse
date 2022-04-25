@@ -10,6 +10,9 @@ def align_text(x, str):
 def get_player_tile(x, y):
     return [int(x/8), int(y/8)]
 
+def get_pos_after_room_change():
+   return 1*8+4, 1*8+4
+
 def col_player_map(px, py, room_col):
     # print("x = " + str(x))
     # print("y = " + str(y))
