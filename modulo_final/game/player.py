@@ -22,9 +22,5 @@ class Player(Entity):
             self.move()
 
     def draw(self):
-
-        test = [self.x-4, self.y-4, 0, 40, 0, 8, 8]
-        # print(test)
-        # print(*test)
-        pyxel.blt(*test, pyxel.COLOR_BLACK)
-        # pyxel.blt(self.x, self.y, 0, 40, 0, 8, 8, pyxel.COLOR_BLACK)
+        player_draw_args = [self.x-4, self.y-4, 0, 40, 0, 8, 8, pyxel.COLOR_BLACK]
+        pyxel.blt(*player_draw_args)
