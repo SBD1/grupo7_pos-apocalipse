@@ -16,6 +16,9 @@ def get_player_tile(pos_x, pos_y):
 def get_player_pos(tile_x, tile_y):
     return [int(tile_x*8), int(tile_y*8)]
 
+def get_pos_after_room_change():
+   return 1*8+4, 1*8+4
+
 def col_player_map(px, py, room_col):
     x, y = get_player_tile(px-1, py-1)
     if(room_col[y][x] != 0):

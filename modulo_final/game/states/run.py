@@ -46,6 +46,9 @@ class RunState(GameState):
         if pyxel.btnp(pyxel.KEY_B):
             globals.next_state = "menu"
 
+        if pyxel.btnp(pyxel.KEY_I):
+            globals.next_state = "inventory"
+
     def draw(self):
         super().draw()
 
