@@ -30,7 +30,7 @@ class Room:
             weapon.draw()
 
     def change_room(self, room_id):
-        # TODO: Acessar o local em questão no banco e a partir dela instanciar tudo o que for necessário (itens, inimigos, npcs...)
+        # TODO: Acessar o local no banco e instanciar tudo o que for necessário (itens, inimigos, npcs...)
         print("trocando sala...")
         self.npcs.clear()
         self.weapons.clear()

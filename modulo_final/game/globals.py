@@ -10,9 +10,10 @@ current_state = GameState()
 
 current_map_col_type = 0
 
-# TODO: 
+# TODO: Acessar o local no banco...
 player1 = player.Player("Sobrevivente", 2, 2)
 
+# TODO: Acessar o terreno no banco para definir o tilemap
 room1_tm = [0, 0, 0]
 room2_tm = [0, 16*8, 0]
 
