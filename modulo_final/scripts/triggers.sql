@@ -31,6 +31,7 @@ BEGIN
 		
 		IF(skill = 'valor') THEN
 			UPDATE personagem set vida = vvalue + vida WHERE id=id_personagem;
+			DELETE FROM item i WHERE i.id = new.id;
 		END IF;
 		
 		IF(skill = 'defesa') THEN
@@ -44,10 +45,6 @@ BEGIN
 		
 		IF(skill = 'dano') THEN
 			UPDATE personagem set ataque = ataque - vvalue WHERE id=id_personagem;
-		END IF;
-		
-		IF(skill = 'valor') THEN
-			UPDATE personagem set vida = vida - vvalue WHERE id=id_personagem;
 		END IF;
 		
 		IF(skill = 'defesa') THEN
