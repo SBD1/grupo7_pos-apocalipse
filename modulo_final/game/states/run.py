@@ -29,15 +29,15 @@ class RunState(GameState):
             if(map_col_type == 1):
                 player1.x = old_pos[0]
                 player1.y = old_pos[1]
-                
+
             elif(map_col_type >=2 and map_col_type <= 5):
 
                 new_room_id = self.room.directions[utils.int_to_direction(map_col_type)]
 
                 if new_room_id != 0:
-                    # print(new_room_id)
-                    player1.x = 7*8+4
-                    player1.y = 1*8+4
+                    new_pos = utils.room_change_player_pos(utils.int_to_direction(map_col_type))
+                    player1.x = new_pos[0]
+                    player1.y = new_pos[1]
                     self.room.change_room(new_room_id)
                 else:
                     player1.x = old_pos[0]

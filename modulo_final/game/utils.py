@@ -10,8 +10,11 @@ def align_text(x, str):
     n = len(str)
     return (x - (n * pyxel.FONT_WIDTH) / 2)
 
-def get_player_tile(x, y):
-    return [int(x/8), int(y/8)]
+def get_player_tile(pos_x, pos_y):
+    return [int(pos_x/8), int(pos_y/8)]
+
+def get_player_pos(tile_x, tile_y):
+    return [int(tile_x*8), int(tile_y*8)]
 
 def col_player_map(px, py, room_col):
     x, y = get_player_tile(px-1, py-1)
@@ -50,6 +53,17 @@ def int_to_direction(dir_int):
     elif(dir_int == 4): return "left"
     elif(dir_int == 5): return "right"
     else: return "null"
+
+def room_change_player_pos(dir):
+    return direction_to_position(inv_dir(dir))
+
+def direction_to_position(dir):
+    pos = []
+    if dir == "right":  pos = get_player_pos(14, 7)
+    elif dir == "left": pos = get_player_pos(1, 7)
+    elif dir == "up":   pos = get_player_pos(8, 1)
+    elif dir == "down": pos = get_player_pos(8, 12)
+    return pos
 
 def col_mouse_bt(mx, my, btx, bty, btw, bth):
     """
