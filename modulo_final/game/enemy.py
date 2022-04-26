@@ -3,7 +3,7 @@ from entity import Entity
 import pyxel
 
 
-class Inimigo(Entity):
+class Enemy(Entity):
     # def __init__(self):
     #     super().__init__()
 
@@ -14,5 +14,6 @@ class Inimigo(Entity):
         super().update()
 
     def draw(self):
-        pyxel.blt(self.x-4, self.y-4, 0, 48, 0, 8, 8, pyxel.COLOR_BLACK)
+        enemy_draw_args = [self.x-4, self.y-4, 0, 48, 0, 8, 8, pyxel.COLOR_BLACK]
+        pyxel.blt(*enemy_draw_args)
 

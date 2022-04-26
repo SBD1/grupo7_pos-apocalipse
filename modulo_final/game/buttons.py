@@ -2,31 +2,7 @@ from math import dist
 import pyxel
 
 from utils import align_text, col_mouse_bt
-# Evitando import circular:
- 
-# def align_text(x, str):
-#     """
-#         Função que alinha o texto dos botões
 
-#         Params: x: int, str: String
-#         Return: x: int
-#     """
-#     n = len(str)
-#     return (x - (n * pyxel.FONT_WIDTH) / 2)
-
-# def col_mouse_bt(mx, my, btx, bty, btw, bth):
-#     """
-#         Verifica o clique no botão
-#     """
-#     if (btx+(btw/2) > mx > btx-(btw/2)) and (bty+(bth/2) > my > bty-(bth/2)-4):
-#         return True
-#     else:
-#         return False
-
-# Fim da seção usada para evitar import circular
-
-
-# Classe Button abstrata, pai de todos os outros buttons
 class Button:
 
     def __init__(self, x, y, text):
