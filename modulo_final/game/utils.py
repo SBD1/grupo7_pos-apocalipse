@@ -1,6 +1,4 @@
-from lib2to3.pytree import convert
 import pyxel
-from sqlalchemy import true
 import globals
 
 def draw_ui():

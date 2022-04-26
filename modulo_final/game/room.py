@@ -1,5 +1,5 @@
 import npc
-import inimigo
+import enemy
 import weapon
 import globals
 
@@ -9,7 +9,7 @@ class Room:
     def __init__(self) -> None:
         self.id = 1
         self.room_tm = []
-        self.room_col = []
+        self.room_col = globals.room_col
         self.npcs = []
         self.weapons = []
         self.items = []
@@ -38,17 +38,17 @@ class Room:
         rooms = {
             1: {
                 'tm': globals.room1_tm,
-                'col': globals.room1_col,
+                # 'col': globals.room1_col,
                 'npcs': [[5, 2]],
-                'inimigos': [[8, 9]],
+                'enemies': [[8, 9]],
                 'weapons': [[7, 1]],
-                'directions': {"up": 0, "down": 2, "left": 0,  "right": 0}
+                'directions': {"up": 0, "down": 2, "left": 1,  "right": 1}
             },
             2: {
                 'tm': globals.room2_tm,
-                'col': globals.room2_col,
+                # 'col': globals.room2_col,
                 'npcs': [[2, 9]],
-                'inimigos': [[9, 2]],
+                'enemies': [[9, 2]],
                 'weapons': [[8, 1]],
                 'directions': {"up": 1, "down": 0, "left": 0,  "right": 0}
             }
@@ -56,16 +56,16 @@ class Room:
 
         self.id = room_id
         self.room_tm = rooms[room_id]['tm']
-        self.room_col = rooms[room_id]['col']
+        # self.room_col = rooms[room_id]['col']
         self.directions = rooms[room_id]['directions']
 
-        for npc_coords in rooms[room_id]['npcs']:
-            self.npcs.append(npc.Npc(*npc_coords)) 
+        for npc_values in rooms[room_id]['npcs']:
+            self.npcs.append(npc.Npc(*npc_values)) 
 
-        for inimigo_coords in rooms[room_id]['inimigos']:
-            self.npcs.append(inimigo.Inimigo(*inimigo_coords)) 
+        for enemy_values in rooms[room_id]['enemies']:
+            self.npcs.append(enemy.Enemy(*enemy_values)) 
 
-        for weapon_coords in rooms[room_id]['weapons']:
-            self.weapons.append(weapon.Axe(*weapon_coords))
+        for weapon_values in rooms[room_id]['weapons']:
+            self.weapons.append(weapon.Axe(*weapon_values))
         
         
