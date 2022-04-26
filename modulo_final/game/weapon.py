@@ -1,9 +1,9 @@
-
-from item import Entity
 import pyxel
 
+#Local Imports
+from item import Item
 
-class Weapon(Entity):
+class Weapon(Item):
     def __init__(self, name, img, img_x, img_y, tile_x, tile_y):
         super().__init__(name, img, img_x, img_y, tile_x, tile_y)
         

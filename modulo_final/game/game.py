@@ -1,12 +1,13 @@
-import state_handler as sh
+import pyxel
+
+#Local Imports
+from state_handler import change_state
 import globals
 import database
 
-import pyxel
-
 class Game:
     def __init__(self):
-        # testeCon = 
+        # testeCon = database.conecta_db()
         # database.conecta_db()
         # print(testeCon)
         # sql = 'select * from arma'
@@ -21,7 +22,7 @@ class Game:
     def update(self):
         globals.current_state.update()
 
-        sh.change_state()
+        change_state()
 
     def draw(self):
         globals.current_state.draw()        

@@ -1,13 +1,14 @@
-import utils
-from entity import Entity
 import pyxel
-import bullet
 
+#Local Imports
+from entity import Entity
+import utils
+import bullet
 
 class Player(Entity):
 
-    def __init__(self, x, y) -> None:
-        super().__init__(x, y)
+    def __init__(self, name, x, y) -> None:
+        super().__init__(name, x, y)
         self.bullets = []
 
     def update(self):

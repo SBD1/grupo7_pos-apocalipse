@@ -1,9 +1,10 @@
+import pyxel
+
+#Local Imports
 import utils
 import globals
 import buttons
 from states.gamestate import GameState
-
-import pyxel
 
 # Estado do inventário
 class InventoryState(GameState):

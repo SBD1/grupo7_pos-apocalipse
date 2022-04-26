@@ -1,9 +1,11 @@
+import pyxel
+
+#Local Imports
 import utils
 import globals
 import buttons
 from states.gamestate import GameState
 
-import pyxel
 
 # Estado Inicial, Menu principal
 class MenuState(GameState):

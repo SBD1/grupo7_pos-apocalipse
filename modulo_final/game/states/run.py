@@ -1,11 +1,11 @@
-from ctypes import util
 import pyxel
+
+#Local Imports
+import globals
+from globals import player1
+from states.gamestate import GameState
 import room
 import utils
-from globals import player1
-
-import globals
-from states.gamestate import GameState
 
 # Estado principal onde o jogo em si roda
 class RunState(GameState):

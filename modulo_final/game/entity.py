@@ -1,14 +1,17 @@
-import utils
 import pyxel
+
+#Local Imports
+import utils
 import globals
 
 # Classe Entidade abstrata, pai para o player, para os npcs e inimigos
 class Entity:
-    def __init__(self, x, y) -> None:
+    def __init__(self, name, x, y) -> None:
         self.x = x*8+4
         self.y = y*8+4
-        self.dir = ""
+        self.name = name
         self.speed = 2
+        self.dir = ""
 
     def update(self):
         self.dir = ""

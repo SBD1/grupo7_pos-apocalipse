@@ -1,4 +1,6 @@
 import pyxel
+
+#Local Imports
 import globals
 
 def draw_ui():

@@ -1,6 +1,7 @@
-import utils
-
 import pyxel
+
+#Local Imports
+import utils
 
 # Classe abstrata, pai para todos os estados do jogo
 class GameState:

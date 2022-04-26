@@ -1,8 +1,8 @@
-import utils
-from entity import Entity
 import pyxel
 import math
 
+#Local Imports
+import utils
 
 class Bullet:
 

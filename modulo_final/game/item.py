@@ -1,7 +1,6 @@
-
 import pyxel
 
-class Entity:
+class Item:
     TYPE_NONE = -1
     TYPE_PLAYER = 0
     TYPE_ENEMY = 1
