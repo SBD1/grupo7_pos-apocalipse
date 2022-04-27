@@ -1,4 +1,5 @@
 import psycopg2
+import psycopg2.extras
 
 # Função para criar conexão no banco
 def conecta_db():
@@ -19,7 +20,7 @@ def criar_db(sql):
 # Função para inserir dados no banco
 def inserir_db(sql):
     con = conecta_db()
-    cur = con.cursor()
+    cur = con.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
     try:
         cur.execute(sql)
         con.commit()
@@ -33,7 +34,7 @@ def inserir_db(sql):
 # Função para consultas no banco
 def consultar_db(sql):
     con = conecta_db()
-    cur = con.cursor()
+    cur = con.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
     cur.execute(sql)
     recset = cur.fetchall()
     registros = []

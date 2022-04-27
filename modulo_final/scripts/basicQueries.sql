@@ -36,7 +36,7 @@ UPDATE veiculo
     SELECT * FROM local WHERE id = '?';
 
     -- DADOS DOS NPCS
-    SELECT * FROM npc n INNER JOIN personagem per ON n.id_personagem = per.id WHERE id_local = '?';
+    SELECT n.id as id_npc, n.nome, n.e_hostil, n.id_personagem , n.id_local , n.id_dialogo , per.vida , per.nivel , per.caracteristica , per.capacidade_carregamento , per.defesa , per.ataque  FROM npc n INNER JOIN personagem per ON n.id_personagem = per.id WHERE id_local = '?';
 
     -- DADOS DOS ITENS
     SELECT * FROM item WHERE id_local = '?' AND id_mochila = null;

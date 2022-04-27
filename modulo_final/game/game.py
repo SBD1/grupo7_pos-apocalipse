@@ -4,15 +4,12 @@ import pyxel
 from state_handler import change_state
 import globals
 import database
+import queries
 
 class Game:
     def __init__(self):
-        # testeCon = database.conecta_db()
-        # database.conecta_db()
-        # print(testeCon)
-        # sql = 'select * from arma'
-        # consulta = database.consultar_db(sql)
-        # print(consulta)
+        # teste = queries.change_room(1)
+        # print(teste.dados_sala.terreno)
         pyxel.init(globals.WIDTH, globals.HEIGHT, title="Project Nuclear", fps=30)
         pyxel.mouse(True)
         pyxel.load("assets.pyxres")
