@@ -9,7 +9,6 @@ class Room:
     def __init__(self) -> None:
         self.id = 1
         self.room_tm = []
-        self.room_col = globals.room_col
         self.npcs = []
         self.weapons = []
         self.items = []
@@ -17,6 +16,10 @@ class Room:
         self.change_room(1)
 
     def update(self):
+        if(globals.next_room != 0):
+            self.change_room(globals.next_room)
+            globals.next_room = 0
+        
         for npc in self.npcs:
             npc.update()
 
