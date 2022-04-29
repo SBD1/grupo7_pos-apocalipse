@@ -62,7 +62,7 @@ class Entity:
             new_room_id = room_directions[self.get_door_direction(col_type)]
             globals.next_room = new_room_id
 
-            if new_room_id != 0:
+            if new_room_id != None:
                 self.enter_door(col_type)
             else:
                 reset_pos = True

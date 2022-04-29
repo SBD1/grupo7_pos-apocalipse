@@ -13,7 +13,7 @@ player1 = queries.get_player().toPlayer()
 print(player1.x, player1.y)
 room_list= []
 
-next_room = 0
+next_room = None
 
 collision_points = [
 [ 1,  3],
