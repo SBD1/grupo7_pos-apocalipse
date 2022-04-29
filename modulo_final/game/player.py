@@ -6,8 +6,25 @@ import bullet
 
 class Player(Entity):
 
-    def __init__(self, name, x, y) -> None:
-        super().__init__(name, x, y)
+    def __init__(self,
+        id_player,
+        vida,
+        nivel,
+        caracteristica,
+        capacidade_carregamento,
+        defesa,
+        ataque,
+        nome,
+        x,
+        y,
+        furtividade,
+        id_local,
+        id_personagem
+    ) -> None:
+        super().__init__(id_personagem, vida, nivel, caracteristica, capacidade_carregamento, defesa, ataque, nome, x, y)
+        self.id_player = id_player
+        self.furtividade = furtividade
+        self.id_local = id_local
 
     def update(self, room_directions):
         super().update()

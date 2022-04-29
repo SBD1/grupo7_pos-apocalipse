@@ -5,9 +5,23 @@ from entity import Entity
 import utils
 
 class Npc(Entity):
-    def __init__(self, name, x, y, aggro):
-        super().__init__(name, x, y)
+    def __init__(self, id_npc, name, x, y, 
+        vida,
+        nivel,
+        caracteristica,
+        capacidade_carregamento,
+        defesa,
+        ataque,
+        aggro,
+        id_local,
+        id_dialogo,
+        id_personagem
+        ):
+        super().__init__(id_personagem, vida, nivel, caracteristica, capacidade_carregamento, defesa, ataque, name, x, y)
+        self.id_npc = id_npc
         self.is_hostile = aggro
+        self.id_local = id_local
+        self.id_dialogo = id_dialogo
 
     def update(self):
         super().update()

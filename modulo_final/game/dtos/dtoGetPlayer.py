@@ -1,3 +1,6 @@
+import player
+
+
 class DtoGetPlayer:
   def __init__(self,
     id_sobrevivente,
@@ -28,3 +31,6 @@ class DtoGetPlayer:
     self.defesa = defesa
     self.ataque = ataque
     self.id_mochila = id_mochila
+
+  def toPlayer(self):
+    return player.Player(self.id_sobrevivente, self.vida, self.nivel, self.caracteristica, self.capacidade_carregamento, self.defesa, self.ataque, self.nome_sobrevivente, self.coordenadax, self.coordenaday, self.furtividade, self.id_local, self.id_personagem)
