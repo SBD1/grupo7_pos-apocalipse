@@ -17,9 +17,9 @@ class Room:
         self.change_room(1)
 
     def update(self):
-        if(globals.next_room != 0):
+        if(globals.next_room != None):
             self.change_room(globals.next_room)
-            globals.next_room = 0
+            globals.next_room = None
         
         for npc in self.npcs:
             npc.update(globals.player1.x, globals.player1.y)
