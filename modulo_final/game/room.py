@@ -21,7 +21,7 @@ class Room:
             globals.next_room = 0
         
         for npc in self.npcs:
-            npc.update()
+            npc.update(globals.player1.x, globals.player1.y)
 
     def draw(self):
         pyxel.bltm(0, 0, *self.room_tm, globals.WIDTH, globals.HEIGHT)
@@ -34,7 +34,7 @@ class Room:
 
     def change_room(self, room_id):
         # TODO: Acessar o local no banco e instanciar tudo o que for necessário (itens, inimigos, npcs...)
-        print("trocando sala...")
+        # print("trocando sala...")
         self.npcs.clear()
         self.weapons.clear()
 

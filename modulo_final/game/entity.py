@@ -1,3 +1,5 @@
+import pyxel
+
 #Local Imports
 import utils
 import globals
@@ -11,6 +13,8 @@ class Entity:
         self.speed = 2
         self.dir = ""
         self.bullets = []
+        self.health = 120
+        self.total_health = 120
 
     def update(self):
         self.dir = ""
@@ -66,8 +70,19 @@ class Entity:
         self.y = pos[1]
 
     def get_door_direction(self, dir_int):
-        if(dir_int == 2): return "up"
-        elif(dir_int == 3): return "down"
-        elif(dir_int == 4): return "left"
-        elif(dir_int == 5): return "right"
+        return self.get_direction(dir_int-2)
+
+    def get_direction(self, dir_int):
+        if(dir_int == 0): return "up"
+        elif(dir_int == 1): return "down"
+        elif(dir_int == 2): return "left"
+        elif(dir_int == 3): return "right"
         else: return "null"
+
+    def draw(self):
+        # pyxel.pset(self.x, self.y,     pyxel.COLOR_RED)
+        # for point in globals.collision_points:
+        #     pyxel.pset(point[0]+self.x, point[1]+self.y, pyxel.COLOR_WHITE)
+
+        for blt in self.bullets:
+            blt.draw()

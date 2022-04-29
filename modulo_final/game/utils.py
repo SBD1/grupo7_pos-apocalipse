@@ -23,23 +23,16 @@ def get_screen_pos(tile_x, tile_y):
 #################### COLLISION UTILS ####################
 
 def col_map(px, py):
-    x, y = get_tile(px-1, py-1)
-    if(globals.room_col[y][x] != 0):
-        return globals.room_col[y][x]
-    
-    x, y = get_tile(px+1, py-1)
-    if(globals.room_col[y][x] != 0):
-        return globals.room_col[y][x]
 
-    x, y = get_tile(px-1, py+1)
-    if(globals.room_col[y][x] != 0):
-        return globals.room_col[y][x]
+    # print("\ncollision checking for points:")
+    # for point in collision_points:
+    #     print([point[0]+px, point[1]+py])
 
-    x, y = get_tile(px+1, py+1)
-    if(globals.room_col[y][x] != 0):
-        return globals.room_col[y][x]
+    for point in globals.collision_points:
+        x, y = get_tile(point[0]+px, point[1]+py)
+        if(globals.room_col[y][x] != 0):
+            return globals.room_col[y][x]
 
-    # print("nao houve colisao")
     return 0
 
 def col_mouse_bt(mx, my, btx, bty, btw, bth):
@@ -63,8 +56,33 @@ def rect_custom(x1, y1, x2, y2, color):
 
     pyxel.rect(x1, y1, x2-x1, y2-y1, color)
 
+def draw_health_bar(x, y, total_health, current_health, is_thick = False, size = 10):
+    
+    length = size
+    start = x-5
+    height = y+6
+
+    current_length = (length*current_health)/total_health
+
+    l_start = [start,  height]
+    l_end1 =   [start+length, height]
+    l_end2 =   [start+current_length, height]
+
+    if(is_thick):
+        pyxel.line(l_start[0], l_start[1]-1, l_end1[0], l_end1[1]-1, pyxel.COLOR_WHITE)
+        pyxel.line(l_start[0], l_start[1],   l_end1[0], l_end1[1],   pyxel.COLOR_WHITE)
+        pyxel.line(l_start[0], l_start[1]+1, l_end1[0], l_end1[1]+1, pyxel.COLOR_WHITE)
+        
+        pyxel.line(l_start[0], l_start[1]-1, l_end2[0], l_end2[1]-1, pyxel.COLOR_RED)
+        pyxel.line(l_start[0], l_start[1],   l_end2[0], l_end2[1],   pyxel.COLOR_RED)
+        pyxel.line(l_start[0], l_start[1]+1, l_end2[0], l_end2[1]+1, pyxel.COLOR_RED)
+    else:
+        pyxel.line(*l_start, *l_end1, pyxel.COLOR_WHITE)
+        pyxel.line(*l_start, *l_end2, pyxel.COLOR_RED)
+
 def draw_ui():
-    ...
+    draw_health_bar(10, 114, globals.player1.total_health, globals.player1.health, True, 30)
+    # globals.player1.x
 
 def align_text(x, str):
     n = len(str)

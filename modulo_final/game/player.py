@@ -35,7 +35,4 @@ class Player(Entity):
         player_draw_args = [self.x-4, self.y-4, 0, 40, 0, 8, 8, pyxel.COLOR_BLACK]
         pyxel.blt(*player_draw_args)
 
-        for blt in self.bullets:
-            blt.draw()
-
-        # pyxel.pset(self.x, self.y, pyxel.COLOR_CYAN)
+        super().draw()

@@ -10,7 +10,12 @@ current_state = GameState()
 
 next_room = 0
 
-# current_map_col_type = 0
+collision_points = [
+[ 1,  3],
+[-2,  3],
+[ 1, -2],
+[-2, -2],
+]
 
 # TODO: Acessar o local no banco...
 player1 = player.Player("Sobrevivente", 2, 2)
