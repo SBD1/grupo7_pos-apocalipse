@@ -8,8 +8,6 @@ import queries
 
 class Game:
     def __init__(self):
-        # teste = queries.change_room(1)
-        # print(teste.dados_sala.terreno)
         pyxel.init(globals.WIDTH, globals.HEIGHT, title="Project Nuclear", fps=30)
         pyxel.mouse(True)
         pyxel.load("assets.pyxres")

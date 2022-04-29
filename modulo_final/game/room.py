@@ -4,6 +4,7 @@ import pyxel
 import npc
 import weapon
 import globals
+import queries
 
 class Room:
     def __init__(self) -> None:
@@ -38,27 +39,22 @@ class Room:
         self.npcs.clear()
         self.weapons.clear()
 
+        change_room = queries.change_room(room_id)
+        
         rooms = {
             1: {
-                'tm': globals.room1_tm,
-                'npcs': [["Viajante", 5, 2, False], ["Bandido", 8, 9, True]],
-                'weapons': [[6, 9]],
-                'directions': {"up": 0, "down": 2, "left": 1,  "right": 1}
+                'weapons': [[6, 9]]
             },
             2: {
-                'tm': globals.room2_tm,
-                'npcs': [["Andarilho", 2, 9, False], ["Malfeitor", 9, 2, True]],
-                'weapons': [[8, 5]],
-                'directions': {"up": 1, "down": 0, "left": 0,  "right": 0}
+                'weapons': [[8, 5]]
             }
         }
-
         self.id = room_id
-        self.room_tm = rooms[room_id]['tm']
-        self.directions = rooms[room_id]['directions']
+        self.room_tm = globals.room1_tm if change_room.dados_sala.id == 1 else globals.room2_tm
+        self.directions = {"up": change_room.dados_sala.id_norte, "down": change_room.dados_sala.id_sul, "left": change_room.dados_sala.id_oeste, "right": change_room.dados_sala.id_leste}
 
-        for npc_values in rooms[room_id]['npcs']:
-            self.npcs.append(npc.Npc(*npc_values)) 
+        for npc_values in change_room.dados_npcs_sala:
+            self.npcs.append(npc.Npc(npc_values.id_npc, npc_values.nome, 8, 8, npc_values.vida, npc_values.nivel, npc_values.caracteristica, npc_values.capacidade_carregamento, npc_values.defesa, npc_values.ataque, npc_values.e_hostil, npc_values.id_local, npc_values.id_dialogo, npc_values.id_personagem)) 
 
         for weapon_values in rooms[room_id]['weapons']:
             self.weapons.append(weapon.Axe(*weapon_values))

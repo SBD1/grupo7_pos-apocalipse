@@ -1,5 +1,6 @@
 #Local Imports
 import player
+import queries
 from states.gamestate import GameState
 
 WIDTH = 128
@@ -7,6 +8,10 @@ HEIGHT = 128
 
 next_state = "menu"
 current_state = GameState()
+
+player1 = queries.get_player().toPlayer()
+print(player1.x, player1.y)
+room_list= []
 
 next_room = 0
 
@@ -18,7 +23,7 @@ collision_points = [
 ]
 
 # TODO: Acessar o local no banco...
-player1 = player.Player("Sobrevivente", 2, 2)
+# player1 = player.Player("Sobrevivente", 2, 2)
 
 # TODO: Acessar o terreno no banco para definir o tilemap
 room1_tm = [0, 0, 0]

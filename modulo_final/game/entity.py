@@ -6,9 +6,26 @@ import globals
 
 # Classe Entidade abstrata, pai para o player, para os npcs e inimigos
 class Entity:
-    def __init__(self, name, x, y) -> None:
-        self.x = x*8+4
-        self.y = y*8+4
+    def __init__(self,
+        id,
+        vida,
+        nivel,
+        caracteristica,
+        capacidade_carregamento,
+        defesa,
+        ataque,
+        name,
+        x,
+        y) -> None:
+        self.id = id
+        self.vida = vida
+        self.nivel = nivel
+        self.caracteristica = caracteristica
+        self.capacidade_carregamento = capacidade_carregamento
+        self.defesa = defesa
+        self.ataque = ataque
+        self.x = x
+        self.y = y
         self.name = name
         self.speed = 2
         self.dir = ""
