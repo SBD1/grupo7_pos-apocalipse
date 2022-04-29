@@ -16,8 +16,8 @@ def change_room(id_local):
 
 #Buscar dados do player ao inicializar o game
 def get_player():
-  dados_sobrevivente = database.consultar_db('select s.id as id_sobrevivente,s.nome as nome_sobrevivente,s.furtividade,s.id_personagem,s.coordenadax,s.coordenaday,s.id_local,p.vida,p.nivel,p.caracteristica,p.capacidade_carregamento,p.defesa,p.ataque,m.id as id_mochila from sobrevivente s inner join personagem p on s.id_personagem = p.id inner join mochila m on m.id_personagem = p.id;')
-  
+  dados_sobrevivente = database.consultar_db('select s.id as id_sobrevivente,s.nome as nome_sobrevivente,s.furtividade,s.id_personagem,s.coordenadax,s.coordenaday,s.id_local,p.vida,p.nivel,p.caracteristica,p.capacidade_carregamento,p.defesa,p.ataque,m.id as id_mochila from sobrevivente s inner join personagem p on s.id_personagem = p.id inner join mochila m on m.id_personagem = p.id order by s.id limit 1;')
+
   retorno = DtoGetPlayer(
     dados_sobrevivente[0]['id_sobrevivente'],
     dados_sobrevivente[0]['nome_sobrevivente'],
