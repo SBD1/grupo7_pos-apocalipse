@@ -26,10 +26,10 @@ class Button:
         ...
         
 class CircleButton(Button):
-    def __init__(self, x, y, text, r=15, textCenter=False):
+    def __init__(self, x, y, text, r=15, textCenter=False, color = 10, subcolor = 9):
         super().__init__(x, y, text, )
-        self.color = 10
-        self.subcolor = 9
+        self.color = color
+        self.subcolor = subcolor
         self.radius = r
         self.textCenter = textCenter
         
@@ -103,10 +103,10 @@ class RectButton(Button):
 
 # Botão de ativação única, (ou seja, não é do tipo 'toggle')
 class PushButton(Button):
-    def __init__(self, x, y, text, r, textCenter=False):
+    def __init__(self, x, y, text, r, textCenter=False, color = 12, subcolor = 5):
         super().__init__(x, y, text)
-        self.color = 12
-        self.subcolor = 5
+        self.color = color
+        self.subcolor = subcolor
         self.radius = r
         self.offset = 2
         self.textCenter = textCenter

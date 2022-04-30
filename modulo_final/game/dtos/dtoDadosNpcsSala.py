@@ -1,5 +1,5 @@
 class DtoDadosNpcsSala:
-  def __init__(self, id_npc, nome, e_hostil, id_personagem, id_local, id_dialogo, vida, nivel, caracteristica, capacidade_carregamento, defesa, ataque):
+  def __init__(self, id_npc, nome, e_hostil, id_personagem, id_local, id_dialogo, vida, nivel, caracteristica, capacidade_carregamento, defesa, ataque, x, y):
     self.id_npc = id_npc
     self.nome = nome
     self.e_hostil = e_hostil
@@ -12,3 +12,5 @@ class DtoDadosNpcsSala:
     self.capacidade_carregamento = capacidade_carregamento
     self.defesa = defesa
     self.ataque = ataque
+    self.x = x 
+    self.y = y

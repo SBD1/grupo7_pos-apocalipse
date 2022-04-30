@@ -33,7 +33,8 @@ class Npc(Entity):
         if self.is_hostile:
 
             if(pyxel.frame_count%30 == 0):
-                self.bullets.append(bullet.Bullet(self.x, self.y, player_x, player_y, 2))
+                pyxel.playm(4, loop=False)
+                self.bullets.append(bullet.Bullet(self.x, self.y, player_x, player_y, 2, self.ataque))
 
             if(pyxel.frame_count%30 == 0):
                 self.going_to1 = self.get_direction(random.randint(0, 3))
@@ -54,7 +55,7 @@ class Npc(Entity):
 
         pyxel.blt(*npc_draw_args)
 
-        if(self.health < self.total_health):
-            utils.draw_health_bar(self.x, self.y, self.total_health, self.health)
+        if(self.vida < self.total_vida):
+            utils.draw_health_bar(self.x, self.y, self.total_vida, self.vida)
 
         super().draw()

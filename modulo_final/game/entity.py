@@ -30,8 +30,7 @@ class Entity:
         self.speed = 2
         self.dir = ""
         self.bullets = []
-        self.health = 120
-        self.total_health = 120
+        self.total_vida = 100
 
     def update(self):
         self.dir = ""
@@ -40,7 +39,7 @@ class Entity:
             b.update()
 
         if(self.bullets != []):
-            if(self.bullets[0].time <= 0):
+            if(self.bullets[0].range <= 0):
                 del self.bullets[0]
 
     def move(self, room_directions = {}):

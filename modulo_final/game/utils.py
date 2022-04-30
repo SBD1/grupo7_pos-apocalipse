@@ -81,8 +81,13 @@ def draw_health_bar(x, y, total_health, current_health, is_thick = False, size =
         pyxel.line(*l_start, *l_end2, pyxel.COLOR_RED)
 
 def draw_ui():
-    draw_health_bar(10, 114, globals.player1.total_health, globals.player1.health, True, 30)
-    # globals.player1.x
+    pyxel.text(5, 113, "VIDA", pyxel.COLOR_WHITE)
+    draw_health_bar(10, 114, globals.player1.total_vida, globals.player1.vida, True, 30)
+    pyxel.text(45, 113, "ARMA", pyxel.COLOR_WHITE)
+    pyxel.text(65, 113, "DEFESA", pyxel.COLOR_WHITE)
+
+    globals.player_weapon.draw()
+    globals.player_armor.draw()
 
 def align_text(x, str):
     n = len(str)

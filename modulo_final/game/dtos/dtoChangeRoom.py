@@ -1,11 +1,13 @@
 from dtos.dtoDadosSala import DtoDadosSala
 from dtos.dtoDadosNpcsSala import DtoDadosNpcsSala
-from dtos.dtoDadosItensSala import DtoDadosItensSala
+from dtos.dtoDadosArmasSala import DtoDadosArmasSala
+from dtos.dtoDadosArmadurasSala import DtoDadosArmadurasSala
+from dtos.dtoDadosConsumiveisSala import DtoDadosConsumiveisSala
 from dtos.dtoDadosVeiculosSala import DtoDadosVeiculosSala
 
 
 class DtoChangeRoom:
-  def __init__(self, dados_sala, dados_npcs_sala, dados_itens_sala, dados_veiculos_sala):
+  def __init__(self, dados_sala, dados_npcs_sala, dados_veiculos_sala, dados_armas_sala, dados_armaduras_sala, dados_consumiveis_sala):
     self.dados_sala = DtoDadosSala(
       dados_sala[0]['id'],
       dados_sala[0]['id_norte'],
@@ -31,19 +33,67 @@ class DtoChangeRoom:
           npc['caracteristica'],
           npc['capacidade_carregamento'],
           npc['defesa'],
-          npc['ataque']))
-    self.dados_itens_sala = []
-    for item in dados_itens_sala:
-      self.dados_itens_sala.append(
-        DtoDadosItensSala(
-          item['id'],
-          item['peso'],
-          item['nivel'],
-          item['id_mochila'],
-          item['coordenadax'],
-          item['coordenaday'],
-          item['id_local'],
-          item['id_tipo_item']))
+          npc['ataque'],
+          npc['x'],
+          npc['y']))
+
+    self.dados_armas_sala = []
+    for arma in dados_armas_sala:
+      self.dados_armas_sala.append(
+        DtoDadosArmasSala(
+          arma['id_arma'],
+          arma['dano'],
+          arma['descricao'],
+          arma['durabilidade'],
+          arma['id_tipo_item'],
+          arma['municao'],
+          arma['id'],
+          arma['peso'],
+          arma['nivel'],
+          arma['id_mochila'],
+          arma['coordenadax'],
+          arma['coordenaday'],
+          arma['id_local'],
+        )
+      )
+
+    self.dados_armaduras_sala = []
+    for armadura in dados_armaduras_sala:
+      self.dados_armaduras_sala.append(
+        DtoDadosArmadurasSala(
+          armadura['id_armadura'],
+          armadura['defesa'],
+          armadura['material'],
+          armadura['durabilidade'],
+          armadura['id_tipo_item'],
+          armadura['id'],
+          armadura['peso'],
+          armadura['nivel'],
+          armadura['id_mochila'],
+          armadura['coordenadax'],
+          armadura['coordenaday'],
+          armadura['id_local'],
+        )
+      )
+
+    self.dados_consumiveis_sala = []
+    for consumivel in dados_consumiveis_sala:
+      self.dados_consumiveis_sala.append(
+        DtoDadosConsumiveisSala(
+          consumivel['id_consumivel'],
+          consumivel['descricao'],
+          consumivel['efeito'],
+          consumivel['valor'],
+          consumivel['id_tipo_item'],
+          consumivel['id'],
+          consumivel['peso'],
+          consumivel['nivel'],
+          consumivel['id_mochila'],
+          consumivel['coordenadax'],
+          consumivel['coordenaday'],
+          consumivel['id_local'],
+        )
+      )
     self.dados_veiculos_sala = []
     for veiculo in dados_veiculos_sala:
       self.dados_veiculos_sala.append(

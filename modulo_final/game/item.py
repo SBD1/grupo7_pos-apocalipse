@@ -1,27 +1,41 @@
 import pyxel
 
-class Item:
-    TYPE_NONE = -1
-    TYPE_PLAYER = 0
-    TYPE_ENEMY = 1
-    TYPE_WEAPON = 2
-    TYPE_SHIELD = 3
-    TYPE_POTION = 4
-    TYPE_TELEPORTER = 5
-    TYPE_TRIGGER = 6
+import utils
 
-    def __init__(self, name, img, img_x, img_y, tile_x, tile_y):
+class Item:
+    def __init__(self,
+        id,
+        peso,
+        nivel,
+        id_mochila,
+        x,
+        y,
+        id_local,
+        id_tipo_item,
+        name,
+        img_x,
+        img_y,
+        is_equipped):
+        self.id = id
+        self.peso = peso
+        self.nivel = nivel
+        self.id_mochila = id_mochila
+        self.x = x
+        self.y = y
+        self.id_local = id_local
+        self.id_tipo_item = id_tipo_item
         self.name = name
-        self.img = img
         self.img_x = img_x
         self.img_y = img_y
-        self.tile_x = tile_x
-        self.tile_y = tile_y
         self.type = -1
+
+        self.is_equipped = is_equipped
         
-    def update(self, map):
-        raise NotImplementedError
-        
-    def draw(self):
-        pyxel.blt(self.tile_x-4, self.tile_y-4, 0, 48, 0, 8, 8, pyxel.COLOR_BLACK)
-            
+    def update(self):
+        ...
+
+    def draw(self):    
+
+        item_draw_args = [self.x-4, self.y-4, 0, self.img_x, self.img_y, 8, 8, pyxel.COLOR_BLACK]
+        # print(self.x, self.y)
+        pyxel.blt(*item_draw_args)

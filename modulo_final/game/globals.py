@@ -1,5 +1,8 @@
 #Local Imports
 import player
+import player_weapon
+import player_armor
+import armor
 import queries
 from states.gamestate import GameState
 
@@ -10,7 +13,20 @@ next_state = "menu"
 current_state = GameState()
 
 player1 = queries.get_player().toPlayer()
-print(player1.x, player1.y)
+
+sprites = [
+    [32, 56], # 0 hand
+    [ 0, 64], # 1 gun
+    [72, 72], # 2 shirt
+    [72, 56], # 3 armor
+    [32, 88], # 4 band-aid
+    [56, 64], # 5 potion
+]
+
+player_weapon = player_weapon.PlayerWeapon(32, 56, 20, 4)
+player_armor  = player_armor.PlayerArmor(72, 72, 5)
+
+# print(player1.x, player1.y)
 room_list= []
 
 next_room = None
@@ -26,6 +42,17 @@ collision_points = [
 # player1 = player.Player("Sobrevivente", 2, 2)
 
 # TODO: Acessar o terreno no banco para definir o tilemap
+
+room_tms = [
+    [0, 0, 0],
+    [0, 16*8, 16*8], # 1
+    [0, 16*8,    0], # 2
+    [0, 16*8, 32*8], # 3
+    [0, 0,    32*8], # 4
+    [0, 32*8, 32*8], # 5
+    [0, 32*8, 16*8], # 6
+    [0, 32*8, 48*8], # 7
+]
 room1_tm = [0, 0, 0]
 room2_tm = [0, 16*8, 0]
 
