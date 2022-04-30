@@ -7,6 +7,14 @@
 
 ![Alt Text](https://c.tenor.com/fSDhYCDcVTIAAAAd/fallout.gif)
 
+## Sobre
+
+O projeto é um jogo baseado em Fallout, ou seja, um jogo contextualizado em um cenário pós-apocalíptico e será desenvolvido na disciplina Sistema de Banco de Dados 1 ministrada por Maurício Serrano.
+
+## Vídeo de Apresentação
+
+https://unbbr.sharepoint.com/:v:/s/Grupo7-Bancos1/ES-J7LHrv65Kgf1Z0QIbWQoBQxY1C6XynZpwFUau8kvWCQ?email=serrano%40unb.br&e=CGXolr
+
 ## Alunos
 
 | Foto                                                  | Matrícula  | Aluno                             | GitHub                                                     |
@@ -16,6 +24,3 @@
 |![alt text](https://github.com/Rafaelltm.png)          | 19/0019158 | Rafael Leão                       | [@Rafaelltm](https://github.com/Rafaelltm)                 |
 |![alt text](https://github.com/tsrrodrigues.png)       | 18/0114689 | Tiago Samuel Rodrigues            | [@tsrrodrigues](https://github.com/tsrrodrigues)           |
 
-## Sobre
-
-O projeto é um jogo baseado em Fallout, ou seja, um jogo contextualizado pós-apocalipse e será desenvolvido na disciplina Sistema de Banco de Dados 1 ministrada por Maurício Serrano.
